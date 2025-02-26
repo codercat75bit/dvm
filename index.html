@@ -7,14 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
         
-        <form action="#" id="Form" novalidate>
+        <form  id="Form" novalidate>
             <div>
                 <div class="icon"><img src="DVM_Banner.webp" alt=""></div>
             </div>
             <div><h1>DVM Merchandise Signings</h1></div>
-            <div></div>
+            <div class="carousel">
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <div class="cr">
+                    <div class="img">
+                        <img src="image1f.png" alt="Merch 1">
+                        <p>Zen Blossom Hoodie</p>
+                    </div>
+                    <div id="i2" class="img">
+                        <img src="image2f.png" alt="Merch 2">
+                        <p>Varsity jacket</p>
+                    </div>
+                    <div class="img">
+                        <img src="image3.png" alt="Merch 3">
+                        <p>Classis Hoodie</p>
+                    </div>
+                </div>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+            
             <div class="UI">
                 <label for="Name">Name :</label>
                 <input type="text" name="Name" id="Name" placeholder="Enter your name" required>
@@ -27,7 +44,7 @@
             </div> 
             <div> <div class="UI">
                 <label for="">Phone Number : </label>
-                <input type="text" name="Phone Number" id="Phone_number" placeholder="Enter your Phone Number" required>
+                <input type="tel" name="Phone Number" id="Phone_number" placeholder="Enter your Phone Number" required>
                 <p class="error" id="numberError"></p>
             </div>
             <div class="UI">
@@ -35,25 +52,24 @@
                 <input type="text" name="BITS ID" id="BITS_ID" placeholder="Enter your BITS ID" required>
                 <p class="error" id="idError"></p>
             </div>
-        <div>
+        
             <div class="Hostel">
         <label for="Hostel"> Hostel</label>
         <select name="Hostel" id="Hostel" required>
             <option value="" >--Select Your Hostel--</option>
-            <option value="">Krishna</option>
-            <option value="">Gandhi</option>
-           <option value="">SR</option>
+            <option value="Krishna">Krishna</option>
+            <option value="Gandhi">Gandhi</option>
+           <option value="SR">SR</option>
            <option value="Ram">Ram</option>
-           <option value="">Budh</option>
-           <option value="">Shankar</option>
-           <option value="">Vyas</option>
-           <option value="">VK</option>
-           <option value="">Bhagirath</option>
-           <option value="">Meera</option>
+           <option value="Budh">Budh</option>
+           <option value="Shankar">Shankar</option>
+           <option value="Vyas">Vyas</option>
+           <option value="VK">VK</option>
+           <option value="Bhagirath">Bhagirath</option>
+           <option value="Meera">Meera</option>
         </select>
         <p class="error" id="hostelError"></p>
         <div>
-
             <div class="size">
                 <div>Size</div>
                 <div class="content" id="size">
@@ -65,21 +81,34 @@
                 </div>
                 <p class="error" id="sizeError"></p>
             </div>
+            
+            <div class="merch-container">
+                <div>Select Merch</div>
+                <div class="merch"><input type="checkbox">Zen Blossom Hoodie</div>
+                <div class="merch"><input type="checkbox">Varsity Jacket</div>
+                <div class="merch"><input type="checkbox">Classic Hoodie</div>
+            </div>
+
+            <div class="comment">Others(Mention if you want multiple sizes and multiple hoodies): <input type="text" class="cmt" placeholder="Type your comment here"></div>
+            
             <div class="TC">
                 <label class="TC">
                     <input type="checkbox" name="checkbox" id="checkbox">
                     &nbsp;Terms&Conditions
                 </label>
             </div>
+
             <div class="button-container">
-                <input class="Submit" type="submit" value="Submit">
+                <input class="Submit" type="submit" >
                 <input type="reset" value="Clear Form" class="Clear" id="clearForm">
             </div>
-            <div id="thankYouMessage" class="ty">
-                <h2>Thank you for your response!</h2>
-                <button type="button" id="submitAnother">Submit with Different Email</button>
-            </div>
+           
+            
         </form>
+       
+    <div id="thankYouMessage" >
+        <h2>Thank you for your response!</h2>
+        <button type="button" id="submitAnother">Submit with Different Email</button>
     </div>
     <script src="Form.js"></script>
     

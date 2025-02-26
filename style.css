@@ -14,20 +14,13 @@ body{
     color: #00aeff;
     background-color: black;
    min-height: 100vh;
-   background-image: url("images.jpg");
+  background-image: url("images.jpg");
 padding: 50px;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-   min-height: 80vh;
-    padding-bottom: 50px 0; 
-   
-  }
+
 form {
-  position: relative;
+  
     background-color:  rgba(0, 0, 0, 0.9);
     border: 2px solid #00aeff ;
     border-radius: 20px;
@@ -41,7 +34,7 @@ form {
 }
 form img{
     width: 100%;
-    height: fit-content;
+    height: auto;
 }
 .UI, .Hostel {
 color: #00aeff;
@@ -99,15 +92,36 @@ margin-bottom: 10px;
     gap: 5px;
 }
 .TC {
-    display: flex; 
-    align-items: center; 
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0px;
+    display: flex;
+    flex-direction: row;
+     margin: 10px;
 }
 .TC label {
     text-align: left;
 }
+.merch-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-top: 10px; 
+    gap: 10px;
+}
+
+.merch {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+    white-space: nowrap;
+}
+
+.comment {
+    display: flex;
+    align-items: center; 
+    gap: 5px; 
+    margin-top: 10px;
+}
+
 .button-container input[type="submit"],
 .button-container input[type="reset"] {
     background-color: #00aeff;
@@ -138,22 +152,120 @@ h1{
 h2 { text-align: center;
      margin-bottom: 15px;
      }
-.ty{ 
-    display: none; 
+
+ #thankYouMessage { 
+    display: none;
     text-align: center;
-    margin-top: 20px;
-    position: relative;
-    z-index: 100; 
-    border: 10px;
-    color: white;
-    background-color: white(0, 0, 0, 0.7); 
-    padding: 20px;
-    border-radius: 10px;
- }
+                  }
 
 input.valid, select.valid {border-color: #00aeff !important; }
         input.invalid, select.invalid { border-color: red !important; }
         .error { color: red; font-size: 14px; margin: 0; }
 
 
+        #submitAnother {
+            background-color: #00aeff;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        #submitAnother:hover {
+            background-color: #0586bd;
+        }
 
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px; 
+            margin: 20px auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cr {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .cr .img img{
+            max-height: 500px;
+            width: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .img {
+            flex: 0 0 100%;
+            text-align: center;
+        }
+
+        .img p {
+            color: #00aeff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        button.prev, button.next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 174, 255, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        button.prev { left: 10px; }
+        button.next { right: 10px; }
+
+
+        @media screen and (max-width: 800px) {
+            form {
+                width: 90vw; 
+                padding: 20px;
+            }
+        
+            h1 {
+                font-size: 1.5em; 
+                text-align: center;
+            }
+        
+            form img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+            
+            .button-container {
+                flex-direction: column; 
+            }
+        
+            input, select {
+                font-size: 14px;
+                padding: 6px;
+            }
+
+            .cr {
+                width: 300%;
+            }
+        
+            .cr .img {
+                flex: 0 0 100%;
+            }
+        
+            .cr .img img {
+                width: auto;
+                max-width: 80%;
+                margin: 0 auto;
+            }
+           
+        }
+        
